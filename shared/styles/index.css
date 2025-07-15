@@ -139,25 +139,12 @@ All colors MUST be HSL.
   }
 
   /* Fallback for browsers that don't support background-clip: text */
-  @supports not (background-clip: text) {
-    .neon-sweep {
-      color: hsl(var(--orange-primary));
-      background: none;
-      text-shadow: 
-        0 0 10px hsl(var(--orange-primary) / 0.8),
-        0 0 20px hsl(var(--orange-primary) / 0.6),
-        0 0 30px hsl(var(--orange-primary) / 0.4);
-    }
-  }
-
-  /* Keyframes for neon sweep animation */
-  @keyframes neon-sweep {
-    0% {
-      background-position: -200% center;
-    }
-    100% {
-      background-position: 200% center;
-    }
+  .neon-sweep-fallback {
+    color: hsl(var(--orange-primary));
+    text-shadow: 
+      0 0 10px hsl(var(--orange-primary) / 0.8),
+      0 0 20px hsl(var(--orange-primary) / 0.6),
+      0 0 30px hsl(var(--orange-primary) / 0.4);
   }
 
   /* Mobile Hero Enhancement Classes */

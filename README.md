@@ -1,73 +1,144 @@
-# Welcome to your Lovable project
 
-## Project info
+# Aposte Ganha - Landing Pages
 
-**URL**: https://lovable.dev/projects/42eff43c-e1e3-452b-943a-8bf8d78f3e43
+Este repositório contém todas as landing pages das campanhas promocionais da Aposte Ganha, organizadas por jogos e valores de aposta.
 
-## How can I edit this code?
+## 🎯 Estrutura do Projeto
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/42eff43c-e1e3-452b-943a-8bf8d78f3e43) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+aposte-ganhe-landing-pages/
+├── 🔥 fenix/           # Landing pages do jogo Fênix Sortuda
+├── 🐂 touro/           # Landing pages do jogo Touro Sortudo  
+├── 🐕 cachorro/        # Landing pages do jogo Cachorro Sortudo
+├── ✈️ aviator/         # Landing pages do jogo Aviator
+├── 🔧 shared/          # Componentes e assets compartilhados
+├── 📦 build-config/    # Configurações de build
+└── 🚀 deployment/      # Scripts e configs de deploy
 ```
 
-**Edit a file directly in GitHub**
+## 🎮 Landing Pages Disponíveis
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Fênix Sortuda
+- **R$ 5,00** → [fenix-5-rodadas](./fenix/fenix-5-rodadas/) - 100 giros grátis
+- **R$ 10,00** → [fenix-10-rodadas](./fenix/fenix-10-rodadas/) - 125 giros grátis
 
-**Use GitHub Codespaces**
+### Touro Sortudo
+- **R$ 1,00** → [touro-1-real](./touro/touro-1-real/) - 50 rodadas
+- **R$ 5,00** → [touro-5-reais](./touro/touro-5-reais/) - 100 rodadas extras
+- **R$ 10,00** → [touro-10-reais](./touro/touro-10-reais/) - 125 rodadas na hora
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Cachorro Sortudo
+- **R$ 1,00** → [cachorro-1-real](./cachorro/cachorro-1-real/) - 50 rodadas
+- **R$ 5,00** → [cachorro-5-reais](./cachorro/cachorro-5-reais/) - 100 rodadas
 
-## What technologies are used for this project?
+### Aviator
+- **R$ 1,00** → [aviator-1-real](./aviator/aviator-1-real/) - 5 rodadas
+- **R$ 5,00** → [aviator-5-reais](./aviator/aviator-5-reais/) - 10 rodadas
+- **R$ 10,00** → [aviator-10-reais](./aviator/aviator-10-reais/) - 20 rodadas extras
 
-This project is built with:
+## 🚀 Como Fazer Deploy
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### 1. Deploy Individual (Recomendado)
+```bash
+# Navegar para a landing page desejada
+cd fenix/fenix-5-rodadas
 
-## How can I deploy this project?
+# Instalar dependências
+npm install
 
-Simply open [Lovable](https://lovable.dev/projects/42eff43c-e1e3-452b-943a-8bf8d78f3e43) and click on Share -> Publish.
+# Build para produção
+npm run build
 
-## Can I connect a custom domain to my Lovable project?
+# Deploy no Netlify/Vercel
+npm run deploy
+```
 
-Yes, you can!
+### 2. Deploy de Todas as Landing Pages
+```bash
+# Na raiz do projeto
+npm run build:all
+npm run deploy:all
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🛠️ Comandos Disponíveis
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+```bash
+npm run dev              # Servidor de desenvolvimento
+npm run build           # Build para produção
+npm run preview         # Preview da build
+npm run deploy          # Deploy para hospedagem
+npm run build:all       # Build todas as landing pages
+npm run deploy:all      # Deploy todas para hospedagem
+```
+
+## 🌐 Hospedagem Recomendada
+
+### Netlify (Recomendado)
+- ✅ Deploy automático via GitHub
+- ✅ CDN global incluso
+- ✅ HTTPS automático
+- ✅ Preview deploys
+
+### Vercel
+- ✅ Performance otimizada
+- ✅ Edge functions
+- ✅ Analytics integrado
+
+### Cloudflare Pages
+- ✅ CDN super rápido
+- ✅ Workers integrados
+- ✅ DDoS protection
+
+## 📊 Monitoramento
+
+Cada landing page inclui:
+- Google Analytics
+- Facebook Pixel
+- Hotjar (opcional)
+- GTM (Google Tag Manager)
+
+## 🔧 Personalização
+
+### UTM Parameters
+Cada landing page tem UTMs únicos configurados em:
+```
+/src/config/utm-params.ts
+```
+
+### Cores e Estilos
+Personalize as cores do tema em:
+```
+/src/styles/theme.css
+```
+
+## 📱 Responsive Design
+
+Todas as landing pages são 100% responsivas:
+- 📱 Mobile First
+- 💻 Desktop otimizado
+- 🎯 Foco em conversão
+
+## ⚡ Performance
+
+- Lighthouse Score: 90+
+- Core Web Vitals otimizados
+- Lazy loading de imagens
+- Code splitting automático
+
+## 🔐 Segurança
+
+- HTTPS obrigatório
+- Headers de segurança configurados
+- CSP (Content Security Policy)
+- Rate limiting
+
+## 📞 Suporte
+
+Para dúvidas ou problemas:
+1. Verifique a documentação específica da landing page
+2. Consulte os logs de build
+3. Entre em contato com o time de desenvolvimento
+
+---
+
+**© 2025 Aposte Ganha - Todos os direitos reservados**
