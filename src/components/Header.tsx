@@ -9,7 +9,7 @@ const Header = () => {
           <img 
             src="https://storage.googleapis.com/ag-crm/2025-CRM-AG/Imgs/2025_LOGO_AG_VERTICAL_LARANJ%20E%20BRANCOA.png" 
             alt="ApostaGanha" 
-            className="h-8 md:h-10 w-auto"
+            className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto"
           />
         </div>
       </div>
