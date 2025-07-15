@@ -6,7 +6,7 @@ interface HeroSectionProps {
   amount?: string;
   spins?: number;
   ariaLabel?: string;
-  gameType?: 'fenix' | 'touro' | 'cachorro';
+  gameType?: 'fenix' | 'touro' | 'cachorro' | 'aviator';
   backgroundImage?: string;
   desktopImage?: string;
   mobileImage?: string;
@@ -32,7 +32,8 @@ const HeroSection = ({
   const defaultImages = {
     fenix: "https://storage.googleapis.com/ag-crm/2025-CRM-AG/Imgs/exe1%20(1).png",
     touro: "/lovable-uploads/4480be22-79c5-4acd-b0ec-ef8d05ca085d.png",
-    cachorro: "https://storage.googleapis.com/ag-crm/2025-CRM-AG/Imgs/lp_cachorro_desktop.png"
+    cachorro: "https://storage.googleapis.com/ag-crm/2025-CRM-AG/Imgs/lp_cachorro_desktop.png",
+    aviator: "https://storage.googleapis.com/ag-crm/2025-CRM-AG/Imgs/lp_aviator_desktop.png"
   };
 
   // Use responsive images if provided, otherwise fall back to single image or default
@@ -43,18 +44,23 @@ const HeroSection = ({
     <section className="relative min-h-screen hero-bg overflow-hidden">
       {/* Background Images - Responsive */}
       <div className="absolute inset-0 flex items-center justify-center">
-        {/* Mobile Image */}
-        <img 
-          src={finalMobileImage}
-          alt={`${gameName} Background Mobile`}
-          className="w-full h-full object-cover object-center opacity-60 block md:hidden"
-          loading="eager"
-        />
+        {/* Mobile Image with Enhanced Overlay */}
+        <div className="relative w-full h-full block md:hidden">
+          <img 
+            src={finalMobileImage}
+            alt={`${gameName} Background Mobile`}
+            className="w-full h-full object-cover object-center opacity-40 mobile-bg-blur"
+            loading="eager"
+          />
+          {/* Mobile Dark Overlay */}
+          <div className="absolute inset-0 mobile-hero-overlay"></div>
+        </div>
+        
         {/* Desktop Image */}
         <img 
           src={finalDesktopImage}
           alt={`${gameName} Background Desktop`}
-          className="w-full h-full object-cover object-center opacity-60 sm:opacity-80 hidden md:block"
+          className="w-full h-full object-cover object-center sm:opacity-80 hidden md:block"
           loading="eager"
         />
       </div>
@@ -64,19 +70,19 @@ const HeroSection = ({
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
           {/* Left Content */}
           <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-orange-500 text-glow-orange leading-none">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-orange-500 text-glow-orange leading-none mobile-text-enhanced">
               {actionText}<br />
               GANHOU!
             </h1>
             
             <div className="space-y-3 sm:space-y-4">
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white px-2 sm:px-0">
+              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white px-2 sm:px-0 mobile-text-enhanced">
                 {actionText} <span className="text-orange-500">{amount}</span> E{' '}
                 <span className="text-orange-500">GANHE {spins} {rodadasText}</span>{' '}
                 NA SLOT {gameName.toUpperCase()}!
               </p>
               
-              <p className="text-base sm:text-lg lg:text-xl font-bold text-white">
+              <p className="text-base sm:text-lg lg:text-xl font-bold text-white mobile-text-enhanced">
                 É SIMPLES: JOGOU, GANHOU.
               </p>
             </div>
@@ -94,7 +100,7 @@ const HeroSection = ({
                 </Button>
               </a>
               
-              <p className="text-xs sm:text-sm text-gray-400 px-2 sm:px-0">
+              <p className="text-xs sm:text-sm text-gray-400 px-2 sm:px-0 mobile-text-enhanced">
                 * <a 
                     href="https://ajuda.apostaganha.bet.br/hc/pt-br" 
                     target="_blank"

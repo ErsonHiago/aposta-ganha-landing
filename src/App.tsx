@@ -12,6 +12,9 @@ import TouroLanding5 from "./pages/TouroLanding5";
 import TouroLanding10 from "./pages/TouroLanding10";
 import CachorroLanding1 from "./pages/CachorroLanding1";
 import CachorroLanding5 from "./pages/CachorroLanding5";
+import AviatorLanding1 from "./pages/AviatorLanding1";
+import AviatorLanding5 from "./pages/AviatorLanding5";
+import AviatorLanding10 from "./pages/AviatorLanding10";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +34,9 @@ const App = () => (
           <Route path="/touro-10" element={<TouroLanding10 />} />
           <Route path="/cachorro-1" element={<CachorroLanding1 />} />
           <Route path="/cachorro-5" element={<CachorroLanding5 />} />
+          <Route path="/aviator-1" element={<AviatorLanding1 />} />
+          <Route path="/aviator-5" element={<AviatorLanding5 />} />
+          <Route path="/aviator-10" element={<AviatorLanding10 />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
