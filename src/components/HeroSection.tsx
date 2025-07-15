@@ -37,12 +37,26 @@ const HeroSection = () => {
             </div>
             
             <div className="space-y-4">
-              <Button className="casino-button text-lg">
-                <span>RESGATE AGORA E APROVEITE</span>
-              </Button>
+              <a 
+                href="https://apostaganha.bet.br/cassino/jogos/fenix-sortuda?utm_source=crm&utm_medium=e-mail&utm_campaign=Aposte-Ganhe&utm_content=e-mail_cassino_14-7-2025_slots_promocional_aposte-ganhe_-_br_apostadores-ativos-cassino_-_fenix-sortuda-1-14-07_personalizado_exclusividade_promocional_aposta-condicionada_foto-e-texto_-"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Resgatar 50 giros grátis na slot Fênix Sortuda"
+              >
+                <Button className="casino-button text-lg">
+                  <span>RESGATE AGORA E APROVEITE</span>
+                </Button>
+              </a>
               
               <p className="text-sm text-gray-400">
-                * <a href="#" className="underline hover:text-orange-500 transition-colors">Confira o regulamento</a>
+                * <a 
+                    href="https://ajuda.apostaganha.bet.br/hc/pt-br" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-orange-500 transition-colors"
+                  >
+                    Confira o regulamento
+                  </a>
               </p>
             </div>
           </div>

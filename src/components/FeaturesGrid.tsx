@@ -5,23 +5,19 @@ import { TrendingUp, Gamepad2, Zap, Gift } from 'lucide-react';
 const features = [
   {
     icon: TrendingUp,
-    title: 'SUPER ODDS',
-    color: 'orange'
+    title: 'SUPER ODDS'
   },
   {
     icon: Gamepad2,
-    title: 'SLOTS DIVERTIDOS',
-    color: 'red'
+    title: 'SLOTS DIVERTIDOS'
   },
   {
     icon: Zap,
-    title: 'PLATAFORMA RÁPIDA E INTUITIVA',
-    color: 'orange'
+    title: 'PLATAFORMA RÁPIDA E INTUITIVA'
   },
   {
     icon: Gift,
-    title: 'PROMOÇÕES IMPERDÍVEIS',
-    color: 'red'
+    title: 'PROMOÇÕES IMPERDÍVEIS'
   }
 ];
 
@@ -33,16 +29,21 @@ const FeaturesGrid = () => {
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <div key={index} className="feature-card group">
-                <div className={`w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center ${
-                  feature.color === 'orange' ? 'orange-gradient' : 'red-gradient'
-                } group-hover:scale-110 transition-transform duration-300`}>
+              <a
+                key={index}
+                href="https://apostaganha.bet.br/esportes/futebol/internacional-clubes/liga/uefa-champions-league"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Acessar ${feature.title}`}
+                className="feature-card group"
+              >
+                <div className="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center orange-gradient group-hover:scale-110 transition-transform duration-300">
                   <Icon className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="text-white font-bold text-lg text-center leading-tight">
                   {feature.title}
                 </h3>
-              </div>
+              </a>
             );
           })}
         </div>

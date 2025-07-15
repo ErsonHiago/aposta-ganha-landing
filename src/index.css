@@ -121,12 +121,18 @@ All colors MUST be HSL.
   .casino-button {
     @apply relative overflow-hidden rounded-lg px-8 py-4 text-white font-bold uppercase tracking-wider transition-all duration-300;
     background: linear-gradient(135deg, hsl(var(--orange-primary)), hsl(var(--orange-secondary)));
-    box-shadow: 0 4px 15px hsl(var(--orange-primary) / 0.4);
+    box-shadow: 
+      0 8px 25px hsl(var(--orange-primary) / 0.4),
+      0 4px 15px hsl(var(--orange-primary) / 0.3),
+      inset 0 1px 0 hsl(var(--orange-primary) / 0.8);
   }
 
   .casino-button:hover {
     @apply transform scale-105;
-    box-shadow: 0 6px 25px hsl(var(--orange-primary) / 0.6);
+    box-shadow: 
+      0 12px 35px hsl(var(--orange-primary) / 0.6),
+      0 6px 25px hsl(var(--orange-primary) / 0.4),
+      inset 0 1px 0 hsl(var(--orange-primary) / 0.9);
   }
 
   .casino-button::before {
@@ -144,8 +150,8 @@ All colors MUST be HSL.
   }
 
   .feature-card {
-    @apply relative p-6 rounded-xl text-center transition-all duration-300 hover:scale-105;
-    background: linear-gradient(135deg, hsl(var(--card-dark)), hsl(var(--red-primary) / 0.2));
+    @apply relative p-6 rounded-xl text-center transition-all duration-300 hover:scale-105 cursor-pointer;
+    background: linear-gradient(135deg, hsl(var(--card-dark)), hsl(var(--orange-primary) / 0.1));
     border: 1px solid hsl(var(--orange-primary) / 0.3);
     box-shadow: 0 4px 15px hsl(var(--orange-primary) / 0.2);
   }
@@ -157,6 +163,35 @@ All colors MUST be HSL.
 
   .hero-bg {
     background: radial-gradient(ellipse at center, hsl(var(--orange-primary) / 0.1) 0%, hsl(var(--dark-bg)) 70%);
+  }
+
+  .modern-orange-divider {
+    @apply w-full h-1 relative mx-auto;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      hsl(var(--orange-primary) / 0.3) 10%, 
+      hsl(var(--orange-primary)) 25%, 
+      hsl(var(--orange-secondary)) 50%, 
+      hsl(var(--orange-primary)) 75%, 
+      hsl(var(--orange-primary) / 0.3) 90%, 
+      transparent 100%
+    );
+    box-shadow: 
+      0 0 10px hsl(var(--orange-primary) / 0.5),
+      0 0 20px hsl(var(--orange-primary) / 0.3);
+  }
+
+  .modern-orange-divider::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-full;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      hsl(var(--orange-primary) / 0.8) 30%, 
+      hsl(var(--orange-secondary) / 0.9) 50%, 
+      hsl(var(--orange-primary) / 0.8) 70%, 
+      transparent 100%
+    );
+    filter: blur(1px);
   }
 }
 
