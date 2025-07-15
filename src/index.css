@@ -50,11 +50,9 @@ All colors MUST be HSL.
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* Enhanced casino theme colors - more vibrant */
-    --orange-primary: 30 100% 60%;
-    --orange-secondary: 45 100% 65%;
-    --gold-primary: 50 100% 70%;
-    --gold-secondary: 40 100% 75%;
+    /* Custom colors for the casino theme */
+    --orange-primary: 22 100% 50%;
+    --orange-secondary: 15 100% 55%;
     --red-primary: 0 85% 60%;
     --red-secondary: 350 85% 65%;
     --dark-bg: 0 0% 8%;
@@ -117,37 +115,27 @@ All colors MUST be HSL.
   }
 
   .text-glow-orange {
-    text-shadow: 
-      0 0 5px hsl(var(--orange-primary)),
-      0 0 10px hsl(var(--orange-primary) / 0.8),
-      0 0 15px hsl(var(--orange-primary) / 0.6);
+    text-shadow: 0 0 10px hsl(var(--orange-primary) / 0.8);
   }
 
-  /* Enhanced Neon Sweep Effect - More Vibrant and Visible */
+  /* Neon Sweep Effect for "APOSTOU, GANHOU!" */
   .neon-sweep {
     background: linear-gradient(
       90deg,
       transparent 0%,
-      transparent 15%,
-      hsl(var(--gold-primary)) 25%,
-      hsl(var(--orange-primary)) 35%,
-      hsl(50 100% 80%) 50%,
-      hsl(var(--orange-primary)) 65%,
-      hsl(var(--gold-primary)) 75%,
-      transparent 85%,
+      transparent 20%,
+      rgba(255, 255, 255, 0.8) 40%,
+      hsl(var(--orange-primary)) 50%,
+      rgba(255, 255, 255, 0.8) 60%,
+      transparent 80%,
       transparent 100%
     );
     background-size: 200% 100%;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    animation: neon-sweep 2.5s ease-in-out infinite;
+    animation: neon-sweep 3s ease-in-out infinite;
     will-change: background-position;
-    /* Base text color visible */
-    text-shadow: 
-      0 0 10px hsl(var(--orange-primary) / 0.9),
-      0 0 20px hsl(var(--gold-primary) / 0.7),
-      0 0 30px hsl(var(--orange-primary) / 0.5);
   }
 
   /* Fallback for browsers that don't support background-clip: text */
@@ -156,14 +144,13 @@ All colors MUST be HSL.
       color: hsl(var(--orange-primary));
       background: none;
       text-shadow: 
-        0 0 10px hsl(var(--orange-primary)),
-        0 0 20px hsl(var(--gold-primary) / 0.8),
-        0 0 30px hsl(var(--orange-primary) / 0.6),
-        0 0 40px hsl(var(--gold-primary) / 0.4);
+        0 0 10px hsl(var(--orange-primary) / 0.8),
+        0 0 20px hsl(var(--orange-primary) / 0.6),
+        0 0 30px hsl(var(--orange-primary) / 0.4);
     }
   }
 
-  /* Enhanced keyframes for more vibrant effect */
+  /* Keyframes for neon sweep animation */
   @keyframes neon-sweep {
     0% {
       background-position: -200% center;
@@ -184,10 +171,7 @@ All colors MUST be HSL.
   }
 
   .mobile-text-enhanced {
-    text-shadow: 
-      0 2px 8px rgba(0, 0, 0, 0.8), 
-      0 1px 4px rgba(0, 0, 0, 0.6),
-      0 0 10px hsl(var(--orange-primary) / 0.3);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 1px 4px rgba(0, 0, 0, 0.6);
   }
 
   .mobile-bg-blur {
@@ -197,10 +181,7 @@ All colors MUST be HSL.
   /* Apply mobile text enhancement only on small screens */
   @media (max-width: 768px) {
     .mobile-text-enhanced {
-      text-shadow: 
-        0 3px 12px rgba(0, 0, 0, 0.9), 
-        0 2px 6px rgba(0, 0, 0, 0.8),
-        0 0 15px hsl(var(--orange-primary) / 0.4);
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9), 0 2px 6px rgba(0, 0, 0, 0.8);
     }
   }
 

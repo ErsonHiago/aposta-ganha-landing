@@ -74,14 +74,7 @@ const HeroSection = ({
           {/* Left Content */}
           <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-none mobile-text-enhanced">
-              <span 
-                className="neon-sweep text-glow-orange"
-                style={{
-                  WebkitTextStroke: '1px rgba(255, 140, 0, 0.3)',
-                  fontWeight: '900',
-                  letterSpacing: '0.02em'
-                }}
-              >
+              <span className="neon-sweep text-glow-orange">
                 APOSTOU,<br />
                 GANHOU!
               </span>
