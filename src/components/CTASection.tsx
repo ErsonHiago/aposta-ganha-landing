@@ -4,14 +4,18 @@ import { Button } from '@/components/ui/button';
 
 interface CTASectionProps {
   ariaLabel?: string;
+  href?: string;
 }
 
-const CTASection = ({ ariaLabel = "Resgatar 50 giros grátis na slot Fênix Sortuda" }: CTASectionProps) => {
+const CTASection = ({ 
+  ariaLabel = "Resgatar giros grátis",
+  href = "https://apostaganha.bet.br/cassino/jogos/fenix-sortuda?utm_source=crm&utm_medium=e-mail&utm_campaign=Aposte-Ganhe&utm_content=e-mail_cassino_14-7-2025_slots_promocional_aposte-ganhe_-_br_apostadores-ativos-cassino_-_fenix-sortuda-1-14-07_personalizado_exclusividade_promocional_aposta-condicionada_foto-e-texto_-"
+}: CTASectionProps) => {
   return (
     <section className="bg-black py-12 sm:py-16">
       <div className="container mx-auto px-4 sm:px-6 text-center">
         <a 
-          href="https://apostaganha.bet.br/cassino/jogos/fenix-sortuda?utm_source=crm&utm_medium=e-mail&utm_campaign=Aposte-Ganhe&utm_content=e-mail_cassino_14-7-2025_slots_promocional_aposte-ganhe_-_br_apostadores-ativos-cassino_-_fenix-sortuda-1-14-07_personalizado_exclusividade_promocional_aposta-condicionada_foto-e-texto_-"
+          href={href}
           target="_blank"
           rel="noopener noreferrer"
           aria-label={ariaLabel}

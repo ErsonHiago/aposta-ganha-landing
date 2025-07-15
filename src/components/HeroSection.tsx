@@ -6,21 +6,41 @@ interface HeroSectionProps {
   amount?: string;
   spins?: number;
   ariaLabel?: string;
+  gameType?: 'fenix' | 'touro';
+  backgroundImage?: string;
+  gameName?: string;
+  rodadasText?: string;
+  actionText?: string;
+  href?: string;
 }
 
 const HeroSection = ({ 
   amount = "R$1,00", 
   spins = 50, 
-  ariaLabel = "Resgatar 50 giros grátis na slot Fênix Sortuda" 
+  ariaLabel = "Resgatar giros grátis", 
+  gameType = "fenix",
+  backgroundImage,
+  gameName = "Fênix Sortuda",
+  rodadasText = "GIROS GRÁTIS",
+  actionText = "APOSTOU",
+  href = "https://apostaganha.bet.br/cassino/jogos/fenix-sortuda?utm_source=crm&utm_medium=e-mail&utm_campaign=Aposte-Ganhe&utm_content=e-mail_cassino_14-7-2025_slots_promocional_aposte-ganhe_-_br_apostadores-ativos-cassino_-_fenix-sortuda-1-14-07_personalizado_exclusividade_promocional_aposta-condicionada_foto-e-texto_-"
 }: HeroSectionProps) => {
+  const defaultImages = {
+    fenix: "https://storage.googleapis.com/ag-crm/2025-CRM-AG/Imgs/exe1%20(1).png",
+    touro: "/lovable-uploads/4480be22-79c5-4acd-b0ec-ef8d05ca085d.png"
+  };
+
+  const imageUrl = backgroundImage || defaultImages[gameType];
+  
   return (
     <section className="relative min-h-screen hero-bg overflow-hidden">
-      {/* Background Phoenix */}
+      {/* Background Image */}
       <div className="absolute inset-0 flex items-center justify-center">
         <img 
-          src="/lovable-uploads/126df665-ea72-4d6b-bd97-0b826f9c1aec.png" 
-          alt="Phoenix Background" 
-          className="w-full h-full object-cover opacity-80"
+          src={imageUrl}
+          alt={`${gameName} Background`}
+          className="w-full h-full object-cover object-center opacity-60 sm:opacity-80"
+          loading="eager"
         />
       </div>
       
@@ -30,15 +50,15 @@ const HeroSection = ({
           {/* Left Content */}
           <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-orange-500 text-glow-orange leading-none">
-              APOSTOU<br />
+              {actionText}<br />
               GANHOU!
             </h1>
             
             <div className="space-y-3 sm:space-y-4">
               <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white px-2 sm:px-0">
-                APOSTE <span className="text-orange-500">{amount}</span> E{' '}
-                <span className="text-orange-500">GANHE {spins} GIROS GRÁTIS</span>{' '}
-                NA SLOT FÊNIX SORTUDA!
+                {actionText} <span className="text-orange-500">{amount}</span> E{' '}
+                <span className="text-orange-500">GANHE {spins} {rodadasText}</span>{' '}
+                NA SLOT {gameName.toUpperCase()}!
               </p>
               
               <p className="text-base sm:text-lg lg:text-xl font-bold text-white">
@@ -48,7 +68,7 @@ const HeroSection = ({
             
             <div className="space-y-3 sm:space-y-4">
               <a 
-                href="https://apostaganha.bet.br/cassino/jogos/fenix-sortuda?utm_source=crm&utm_medium=e-mail&utm_campaign=Aposte-Ganhe&utm_content=e-mail_cassino_14-7-2025_slots_promocional_aposte-ganhe_-_br_apostadores-ativos-cassino_-_fenix-sortuda-1-14-07_personalizado_exclusividade_promocional_aposta-condicionada_foto-e-texto_-"
+                href={href}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={ariaLabel}
@@ -72,7 +92,7 @@ const HeroSection = ({
             </div>
           </div>
           
-          {/* Right Content - Phoenix Image Area */}
+          {/* Right Content - Game Image Area */}
           <div className="relative lg:block hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-full blur-3xl"></div>
           </div>

@@ -15,7 +15,11 @@ const Landing10 = () => {
       <HeroSection 
         amount="R$10,00" 
         spins={125} 
-        ariaLabel="Resgatar 125 giros grátis na slot Fênix Sortuda" 
+        ariaLabel="Resgatar 125 giros grátis na slot Fênix Sortuda"
+        gameType="fenix"
+        gameName="Fênix Sortuda"
+        rodadasText="GIROS GRÁTIS"
+        actionText="APOSTE"
       />
       <OrangeDivider />
       <AdvantagesSection />
