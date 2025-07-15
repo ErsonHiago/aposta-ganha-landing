@@ -6,8 +6,10 @@ interface HeroSectionProps {
   amount?: string;
   spins?: number;
   ariaLabel?: string;
-  gameType?: 'fenix' | 'touro';
+  gameType?: 'fenix' | 'touro' | 'cachorro';
   backgroundImage?: string;
+  desktopImage?: string;
+  mobileImage?: string;
   gameName?: string;
   rodadasText?: string;
   actionText?: string;
@@ -20,6 +22,8 @@ const HeroSection = ({
   ariaLabel = "Resgatar giros grátis", 
   gameType = "fenix",
   backgroundImage,
+  desktopImage,
+  mobileImage,
   gameName = "Fênix Sortuda",
   rodadasText = "GIROS GRÁTIS",
   actionText = "APOSTOU",
@@ -27,19 +31,30 @@ const HeroSection = ({
 }: HeroSectionProps) => {
   const defaultImages = {
     fenix: "https://storage.googleapis.com/ag-crm/2025-CRM-AG/Imgs/exe1%20(1).png",
-    touro: "/lovable-uploads/4480be22-79c5-4acd-b0ec-ef8d05ca085d.png"
+    touro: "/lovable-uploads/4480be22-79c5-4acd-b0ec-ef8d05ca085d.png",
+    cachorro: "https://storage.googleapis.com/ag-crm/2025-CRM-AG/Imgs/lp_cachorro_desktop.png"
   };
 
-  const imageUrl = backgroundImage || defaultImages[gameType];
+  // Use responsive images if provided, otherwise fall back to single image or default
+  const finalDesktopImage = desktopImage || backgroundImage || defaultImages[gameType];
+  const finalMobileImage = mobileImage || backgroundImage || defaultImages[gameType];
   
   return (
     <section className="relative min-h-screen hero-bg overflow-hidden">
-      {/* Background Image */}
+      {/* Background Images - Responsive */}
       <div className="absolute inset-0 flex items-center justify-center">
+        {/* Mobile Image */}
         <img 
-          src={imageUrl}
-          alt={`${gameName} Background`}
-          className="w-full h-full object-cover object-center opacity-60 sm:opacity-80"
+          src={finalMobileImage}
+          alt={`${gameName} Background Mobile`}
+          className="w-full h-full object-cover object-center opacity-60 block md:hidden"
+          loading="eager"
+        />
+        {/* Desktop Image */}
+        <img 
+          src={finalDesktopImage}
+          alt={`${gameName} Background Desktop`}
+          className="w-full h-full object-cover object-center opacity-60 sm:opacity-80 hidden md:block"
           loading="eager"
         />
       </div>

@@ -19,6 +19,8 @@ const TouroLanding1 = () => {
         spins={50}
         ariaLabel="Resgatar 50 rodadas no Touro Sortudo"
         gameType="touro"
+        desktopImage="https://storage.googleapis.com/ag-crm/2025-CRM-AG/Imgs/lp_touro_desktop.png"
+        mobileImage="https://storage.googleapis.com/ag-crm/2025-CRM-AG/Imgs/lp_touro_mobile.png"
         gameName="Touro Sortudo"
         rodadasText="RODADAS"
         actionText="APOSTOU"

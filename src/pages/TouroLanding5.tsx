@@ -19,7 +19,8 @@ const TouroLanding5 = () => {
         spins={100}
         ariaLabel="Resgatar 100 rodadas extras no Touro Sortudo"
         gameType="touro"
-        backgroundImage="/lovable-uploads/15fd09f3-1f9c-4271-b7ad-03d5d4f90f47.png"
+        desktopImage="https://storage.googleapis.com/ag-crm/2025-CRM-AG/Imgs/lp_touro_desktop.png"
+        mobileImage="https://storage.googleapis.com/ag-crm/2025-CRM-AG/Imgs/lp_touro_mobile.png"
         gameName="Touro Sortudo"
         rodadasText="RODADAS EXTRAS"
         actionText="APOSTE"
