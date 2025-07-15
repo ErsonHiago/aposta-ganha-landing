@@ -63,6 +63,15 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Enhanced casino colors
+        orange: {
+          primary: "hsl(var(--orange-primary))",
+          secondary: "hsl(var(--orange-secondary))",
+        },
+        gold: {
+          primary: "hsl(var(--gold-primary))",
+          secondary: "hsl(var(--gold-secondary))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -86,7 +95,7 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "neon-sweep": "neon-sweep 3s ease-in-out infinite",
+        "neon-sweep": "neon-sweep 2.5s ease-in-out infinite",
       },
     },
   },
