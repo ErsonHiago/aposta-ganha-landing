@@ -39,6 +39,9 @@ const HeroSection = ({
   // Use responsive images if provided, otherwise fall back to single image or default
   const finalDesktopImage = desktopImage || backgroundImage || defaultImages[gameType];
   const finalMobileImage = mobileImage || backgroundImage || defaultImages[gameType];
+
+  // Determinar o texto da slot baseado no gameType
+  const slotText = gameType === 'aviator' ? 'NO SLOT' : 'NA SLOT';
   
   return (
     <section className="relative min-h-screen hero-bg overflow-hidden">
@@ -71,7 +74,7 @@ const HeroSection = ({
           {/* Left Content */}
           <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-orange-500 text-glow-orange leading-none mobile-text-enhanced">
-              {actionText}<br />
+              APOSTOU,<br />
               GANHOU!
             </h1>
             
@@ -79,7 +82,7 @@ const HeroSection = ({
               <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white px-2 sm:px-0 mobile-text-enhanced">
                 {actionText} <span className="text-orange-500">{amount}</span> E{' '}
                 <span className="text-orange-500">GANHE {spins} {rodadasText}</span>{' '}
-                NA SLOT {gameName.toUpperCase()}!
+                {slotText} {gameName.toUpperCase()}!
               </p>
               
               <p className="text-base sm:text-lg lg:text-xl font-bold text-white mobile-text-enhanced">
