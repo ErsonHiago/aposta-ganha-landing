@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -117,33 +118,37 @@ All colors MUST be HSL.
     text-shadow: 0 0 10px hsl(var(--orange-primary) / 0.8);
   }
 
-  /* Neon Sweep Effect for "APOSTOU, GANHOU!" - SEM BLUR */
-  .neon-sweep {
-    background: linear-gradient(
-      90deg,
-      transparent 0%,
-      transparent 20%,
-      rgba(255, 255, 255, 0.8) 40%,
-      hsl(var(--orange-primary)) 50%,
-      rgba(255, 255, 255, 0.8) 60%,
-      transparent 80%,
-      transparent 100%
-    );
-    background-size: 200% 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: neon-sweep 3s ease-in-out infinite;
+  /* Diagonal Stripe Effect for "APOSTOU, GANHOU!" */
+  .diagonal-stripe-effect {
+    color: white;
+    text-shadow: .03em .03em 0 hsl(var(--dark-bg));
     will-change: background-position;
-    text-shadow: 
-      0 0 15px hsl(var(--orange-primary) / 0.9),
-      0 0 30px hsl(var(--orange-primary) / 0.7),
-      0 0 45px hsl(var(--orange-primary) / 0.5);
+  }
+
+  .diagonal-stripe-effect:after {
+    content: attr(data-shadow);
+    position: absolute;
+    top: .06em; 
+    left: .06em;
+    z-index: -1;
+    text-shadow: none;
+    background-image: linear-gradient(
+      45deg,
+      transparent 45%,
+      hsl(var(--orange-primary) / 0.8) 45%,
+      hsl(var(--orange-primary) / 0.8) 55%,
+      transparent 0
+    );
+    background-size: .05em .05em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: diagonal-anim 15s linear infinite;
   }
 
   /* Fallback for browsers that don't support background-clip: text */
   @supports not (background-clip: text) {
-    .neon-sweep {
+    .diagonal-stripe-effect:after {
       color: hsl(var(--orange-primary));
       background: none;
       text-shadow: 
@@ -153,17 +158,17 @@ All colors MUST be HSL.
     }
   }
 
-  /* Keyframes for neon sweep animation */
-  @keyframes neon-sweep {
+  /* Keyframes for diagonal stripe animation */
+  @keyframes diagonal-anim {
     0% {
-      background-position: -200% center;
+      background-position: 0 0;
     }
     100% {
-      background-position: 200% center;
+      background-position: 100% -100%;
     }
   }
 
-  /* Mobile Hero Enhancement Classes - SEM BLUR */
+  /* Mobile Hero Enhancement Classes */
   .mobile-hero-overlay {
     background: linear-gradient(
       to bottom,
