@@ -63,7 +63,8 @@ All colors MUST be HSL.
     --orange-primary: 25 100% 55%;
     --orange-secondary: 20 100% 60%;
     --orange-vibrant: 22 100% 65%;
-    --orange-neon: 16 100% 56%; /* #FF5F1F converted to HSL */
+    --orange-neon: 16 100% 56%; /* #FF5F1F */
+    --orange-mixed: 39 100% 50%; /* #FFA500 */
     --red-primary: 0 85% 60%;
     --red-secondary: 350 85% 65%;
     --dark-bg: 0 0% 8%;
@@ -133,22 +134,22 @@ All colors MUST be HSL.
   .gradient-neon-text {
     background: linear-gradient(45deg, 
       hsl(var(--orange-neon)), 
-      hsl(var(--orange-neon) / 0.9), 
+      hsl(var(--orange-mixed)), 
       hsl(var(--orange-neon)),
-      hsl(var(--orange-neon) / 0.8)
+      hsl(var(--orange-mixed))
     );
     background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: neon-sweep 3s ease-in-out infinite;
-    filter: brightness(1.3) contrast(1.2) saturate(1.4);
+    filter: brightness(1.4) contrast(1.3) saturate(1.5);
+    letter-spacing: 0.05em;
     text-shadow: 
-      0 0 5px hsl(var(--orange-neon) / 0.9),
-      0 0 10px hsl(var(--orange-neon) / 0.7),
-      0 0 15px hsl(var(--orange-neon) / 0.5),
-      0 0 20px hsl(var(--orange-neon) / 0.3),
-      0 0 25px hsl(var(--orange-neon) / 0.2);
+      0 0 8px hsl(var(--orange-neon) / 0.9),
+      0 0 16px hsl(var(--orange-mixed) / 0.8),
+      0 0 24px hsl(var(--orange-neon) / 0.6),
+      0 0 32px hsl(var(--orange-mixed) / 0.4);
   }
 
   /* Fallback for browsers that don't support background-clip: text */
@@ -156,13 +157,13 @@ All colors MUST be HSL.
     .gradient-neon-text {
       color: hsl(var(--orange-neon));
       background: none;
-      filter: brightness(1.3) contrast(1.2) saturate(1.4);
+      filter: brightness(1.4) contrast(1.3) saturate(1.5);
+      letter-spacing: 0.05em;
       text-shadow: 
-        0 0 5px hsl(var(--orange-neon) / 0.9),
-        0 0 10px hsl(var(--orange-neon) / 0.7),
-        0 0 15px hsl(var(--orange-neon) / 0.5),
-        0 0 20px hsl(var(--orange-neon) / 0.3),
-        0 0 25px hsl(var(--orange-neon) / 0.2);
+        0 0 8px hsl(var(--orange-neon) / 0.9),
+        0 0 16px hsl(var(--orange-mixed) / 0.8),
+        0 0 24px hsl(var(--orange-neon) / 0.6),
+        0 0 32px hsl(var(--orange-mixed) / 0.4);
     }
   }
 
@@ -170,20 +171,23 @@ All colors MUST be HSL.
   .mobile-hero-overlay {
     background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.7) 0%,
-      rgba(0, 0, 0, 0.5) 50%,
-      rgba(0, 0, 0, 0.8) 100%
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.1) 30%,
+      rgba(0, 0, 0, 0.8) 70%,
+      rgba(0, 0, 0, 0.95) 100%
     );
   }
 
   .mobile-text-enhanced {
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 1px 4px rgba(0, 0, 0, 0.6);
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9), 0 2px 6px rgba(0, 0, 0, 0.8);
+    letter-spacing: 0.02em;
   }
 
   /* Apply mobile text enhancement only on small screens */
   @media (max-width: 768px) {
     .mobile-text-enhanced {
-      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9), 0 2px 6px rgba(0, 0, 0, 0.8);
+      text-shadow: 0 4px 16px rgba(0, 0, 0, 0.95), 0 2px 8px rgba(0, 0, 0, 0.9);
+      letter-spacing: 0.03em;
     }
   }
 
@@ -192,6 +196,7 @@ All colors MUST be HSL.
     @apply relative overflow-hidden rounded-lg px-8 py-4 text-white font-bold uppercase tracking-wider transition-all duration-300;
     font-family: 'Exo', 'Arial', sans-serif;
     font-weight: 700;
+    letter-spacing: 0.05em;
     background: linear-gradient(135deg, hsl(var(--orange-primary)), hsl(var(--orange-secondary)));
     box-shadow: 
       0 8px 25px hsl(var(--orange-primary) / 0.4),
@@ -219,6 +224,25 @@ All colors MUST be HSL.
 
   .casino-button span {
     @apply relative z-10;
+  }
+
+  /* Secondary CTA Button */
+  .secondary-cta-button {
+    @apply relative overflow-hidden rounded-lg px-6 py-3 text-white font-bold uppercase tracking-wider transition-all duration-300;
+    font-family: 'Exo', 'Arial', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    background: linear-gradient(135deg, hsl(var(--orange-mixed)), hsl(var(--orange-neon)));
+    box-shadow: 
+      0 6px 20px hsl(var(--orange-mixed) / 0.4),
+      0 3px 12px hsl(var(--orange-mixed) / 0.3);
+  }
+
+  .secondary-cta-button:hover {
+    @apply transform scale-105;
+    box-shadow: 
+      0 8px 30px hsl(var(--orange-mixed) / 0.6),
+      0 4px 18px hsl(var(--orange-mixed) / 0.4);
   }
 
   .feature-card {
@@ -269,6 +293,7 @@ All colors MUST be HSL.
   .font-dharma-exbold {
     font-family: 'DharmaGothicE-ExBold', 'DharmaGothicE', 'Impact', 'Arial Black', sans-serif;
     font-weight: 800;
+    letter-spacing: 0.03em;
   }
 
   /* Dharma Gothic font classes */

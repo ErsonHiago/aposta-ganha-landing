@@ -52,52 +52,109 @@ const HeroSection = ({
   
   return (
     <section className="relative min-h-screen hero-bg overflow-hidden">
-      {/* Background Images - Responsive */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        {/* Mobile Image with Enhanced Overlay */}
-        <div className="relative w-full h-full block md:hidden">
+      {/* Desktop Layout */}
+      <div className="hidden md:block">
+        {/* Background Image Desktop */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <img 
+            src={finalDesktopImage}
+            alt={`${gameName} Background Desktop`}
+            className="w-full h-full object-cover object-center opacity-80"
+            loading="eager"
+          />
+        </div>
+        
+        {/* Content Desktop */}
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
+            {/* Left Content */}
+            <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-none gradient-neon-text font-dharma-exbold">
+                APOSTOU,<br />
+                GANHOU!
+              </h1>
+              
+              <div className="space-y-3 sm:space-y-4">
+                <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white px-2 sm:px-0 font-dharma-exbold">
+                  {actionText} <span className="text-orange-500">{amount}</span> E{' '}
+                  <span className="text-orange-500">GANHE {spins} {rodadasText}</span>{' '}
+                  {slotText} {gameName.toUpperCase()}!
+                </p>
+                
+                <p className="text-base sm:text-lg lg:text-xl font-bold text-white font-dharma-exbold">
+                  É SIMPLES: JOGOU, GANHOU.
+                </p>
+              </div>
+              
+              <div className="space-y-3 sm:space-y-4">
+                <a 
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={ariaLabel}
+                  className="block"
+                >
+                  <Button className="casino-button text-base sm:text-lg w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4">
+                    <span>RESGATE AGORA E APROVEITE</span>
+                  </Button>
+                </a>
+                
+                <p className="text-xs sm:text-sm text-gray-400 px-2 sm:px-0">
+                  * <a 
+                      href="https://ajuda.apostaganha.bet.br/hc/pt-br" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-orange-500 transition-colors"
+                    >
+                      Confira o regulamento
+                    </a>
+                </p>
+              </div>
+            </div>
+            
+            {/* Right Content - Game Image Area */}
+            <div className="relative lg:block hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-full blur-3xl"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Layout */}
+      <div className="block md:hidden min-h-screen flex flex-col">
+        {/* Background Image Mobile - Top Section */}
+        <div className="relative flex-1 min-h-[60vh]">
           <img 
             src={finalMobileImage}
             alt={`${gameName} Background Mobile`}
-            className="w-full h-full object-cover object-center opacity-40 mobile-bg-blur"
+            className="w-full h-full object-cover object-center"
             loading="eager"
           />
-          {/* Mobile Dark Overlay */}
+          {/* Mobile Overlay */}
           <div className="absolute inset-0 mobile-hero-overlay"></div>
         </div>
         
-        {/* Desktop Image */}
-        <img 
-          src={finalDesktopImage}
-          alt={`${gameName} Background Desktop`}
-          className="w-full h-full object-cover object-center sm:opacity-80 hidden md:block"
-          loading="eager"
-        />
-      </div>
-      
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
-          {/* Left Content */}
-          <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-none mobile-text-enhanced gradient-neon-text font-dharma-exbold">
+        {/* Content Mobile - Bottom Section */}
+        <div className="relative z-10 bg-black/95 px-4 py-8 min-h-[40vh] flex flex-col justify-center">
+          <div className="space-y-6 text-center">
+            <h1 className="text-4xl sm:text-5xl font-black leading-none gradient-neon-text font-dharma-exbold">
               APOSTOU,<br />
               GANHOU!
             </h1>
             
-            <div className="space-y-3 sm:space-y-4">
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white px-2 sm:px-0 mobile-text-enhanced font-dharma-exbold">
+            <div className="space-y-3">
+              <p className="text-lg font-bold text-white mobile-text-enhanced font-dharma-exbold">
                 {actionText} <span className="text-orange-500">{amount}</span> E{' '}
                 <span className="text-orange-500">GANHE {spins} {rodadasText}</span>{' '}
                 {slotText} {gameName.toUpperCase()}!
               </p>
               
-              <p className="text-base sm:text-lg lg:text-xl font-bold text-white mobile-text-enhanced font-dharma-exbold">
+              <p className="text-base font-bold text-white mobile-text-enhanced font-dharma-exbold">
                 É SIMPLES: JOGOU, GANHOU.
               </p>
             </div>
             
-            <div className="space-y-3 sm:space-y-4">
+            <div className="space-y-3">
               <a 
                 href={href}
                 target="_blank"
@@ -105,12 +162,12 @@ const HeroSection = ({
                 aria-label={ariaLabel}
                 className="block"
               >
-                <Button className="casino-button text-base sm:text-lg w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4">
+                <Button className="casino-button text-base w-full px-6 py-3">
                   <span>RESGATE AGORA E APROVEITE</span>
                 </Button>
               </a>
               
-              <p className="text-xs sm:text-sm text-gray-400 px-2 sm:px-0 mobile-text-enhanced">
+              <p className="text-xs text-gray-400 mobile-text-enhanced">
                 * <a 
                     href="https://ajuda.apostaganha.bet.br/hc/pt-br" 
                     target="_blank"
@@ -121,11 +178,6 @@ const HeroSection = ({
                   </a>
               </p>
             </div>
-          </div>
-          
-          {/* Right Content - Game Image Area */}
-          <div className="relative lg:block hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-full blur-3xl"></div>
           </div>
         </div>
       </div>
