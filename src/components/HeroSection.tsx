@@ -73,10 +73,7 @@ const HeroSection = ({
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
           {/* Left Content */}
           <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
-            <h1 
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-none mobile-text-enhanced diagonal-stripe-effect"
-              data-shadow="APOSTOU, GANHOU!"
-            >
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-none mobile-text-enhanced gradient-radiant-text">
               APOSTOU,<br />
               GANHOU!
             </h1>

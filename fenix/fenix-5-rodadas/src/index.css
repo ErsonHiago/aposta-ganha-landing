@@ -38,53 +38,34 @@
 }
 
 @layer components {
-  /* Diagonal Stripe Effect for "APOSTOU, GANHOU!" */
-  .diagonal-stripe-effect {
-    color: white;
-    text-shadow: .03em .03em 0 hsl(var(--dark-bg));
-    will-change: background-position;
-  }
-
-  .diagonal-stripe-effect:after {
-    content: attr(data-shadow);
-    position: absolute;
-    top: .06em; 
-    left: .06em;
-    z-index: -1;
-    text-shadow: none;
-    background-image: linear-gradient(
-      45deg,
-      transparent 45%,
-      hsl(var(--orange-primary) / 0.8) 45%,
-      hsl(var(--orange-primary) / 0.8) 55%,
-      transparent 0
+  /* Gradient Radiant Text Effect for "APOSTOU, GANHOU!" */
+  .gradient-radiant-text {
+    background: linear-gradient(45deg, 
+      hsl(var(--orange-primary)), 
+      hsl(var(--orange-secondary)), 
+      hsl(var(--orange-primary))
     );
-    background-size: .05em .05em;
+    background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: diagonal-anim 15s linear infinite;
+    text-shadow: 
+      0 0 2px hsl(var(--orange-primary) / 0.8),
+      0 0 4px hsl(var(--orange-primary) / 0.6),
+      0 0 6px hsl(var(--orange-primary) / 0.4),
+      0 0 8px hsl(var(--orange-primary) / 0.2);
   }
 
   /* Fallback for browsers that don't support background-clip: text */
   @supports not (background-clip: text) {
-    .diagonal-stripe-effect:after {
+    .gradient-radiant-text {
       color: hsl(var(--orange-primary));
       background: none;
       text-shadow: 
-        0 0 15px hsl(var(--orange-primary) / 0.9),
-        0 0 30px hsl(var(--orange-primary) / 0.7),
-        0 0 45px hsl(var(--orange-primary) / 0.5);
-    }
-  }
-
-  /* Keyframes for diagonal stripe animation */
-  @keyframes diagonal-anim {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 100% -100%;
+        0 0 2px hsl(var(--orange-primary) / 0.8),
+        0 0 4px hsl(var(--orange-primary) / 0.6),
+        0 0 6px hsl(var(--orange-primary) / 0.4),
+        0 0 8px hsl(var(--orange-primary) / 0.2);
     }
   }
 
