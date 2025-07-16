@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -63,8 +62,8 @@ All colors MUST be HSL.
     --orange-primary: 25 100% 55%;
     --orange-secondary: 20 100% 60%;
     --orange-vibrant: 22 100% 65%;
-    --orange-neon: 16 100% 56%; /* #FF5F1F */
-    --orange-mixed: 39 100% 50%; /* #FFA500 */
+    --orange-bright: 39 100% 50%; /* #FFA500 */
+    --orange-deep: 16 100% 56%; /* #FF5F1F */
     --red-primary: 0 85% 60%;
     --red-secondary: 350 85% 65%;
     --dark-bg: 0 0% 8%;
@@ -130,64 +129,34 @@ All colors MUST be HSL.
     text-shadow: 0 0 10px hsl(var(--orange-primary) / 0.8);
   }
 
-  /* Enhanced Gradient Neon Text Effect for "APOSTOU, GANHOU!" */
-  .gradient-neon-text {
-    background: linear-gradient(45deg, 
-      hsl(var(--orange-neon)), 
-      hsl(var(--orange-mixed)), 
-      hsl(var(--orange-neon)),
-      hsl(var(--orange-mixed))
+  /* New Orange Gradient Text for "APOSTOU, GANHOU!" - Following the reference image */
+  .gradient-orange-text {
+    background: linear-gradient(135deg, 
+      hsl(var(--orange-bright)), 
+      hsl(var(--orange-deep)), 
+      hsl(var(--orange-bright))
     );
-    background-size: 300% 300%;
+    background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: neon-sweep 3s ease-in-out infinite;
-    filter: brightness(1.4) contrast(1.3) saturate(1.5);
-    letter-spacing: 0.05em;
+    filter: brightness(1.2) saturate(1.3);
+    letter-spacing: 0.02em;
     text-shadow: 
-      0 0 8px hsl(var(--orange-neon) / 0.9),
-      0 0 16px hsl(var(--orange-mixed) / 0.8),
-      0 0 24px hsl(var(--orange-neon) / 0.6),
-      0 0 32px hsl(var(--orange-mixed) / 0.4);
+      0 2px 4px rgba(255, 165, 0, 0.3),
+      0 0 8px rgba(255, 95, 31, 0.4);
   }
 
   /* Fallback for browsers that don't support background-clip: text */
   @supports not (background-clip: text) {
-    .gradient-neon-text {
-      color: hsl(var(--orange-neon));
+    .gradient-orange-text {
+      color: hsl(var(--orange-bright));
       background: none;
-      filter: brightness(1.4) contrast(1.3) saturate(1.5);
-      letter-spacing: 0.05em;
+      filter: brightness(1.2) saturate(1.3);
+      letter-spacing: 0.02em;
       text-shadow: 
-        0 0 8px hsl(var(--orange-neon) / 0.9),
-        0 0 16px hsl(var(--orange-mixed) / 0.8),
-        0 0 24px hsl(var(--orange-neon) / 0.6),
-        0 0 32px hsl(var(--orange-mixed) / 0.4);
-    }
-  }
-
-  /* Mobile Hero Enhancement Classes */
-  .mobile-hero-overlay {
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.2) 0%,
-      rgba(0, 0, 0, 0.1) 30%,
-      rgba(0, 0, 0, 0.8) 70%,
-      rgba(0, 0, 0, 0.95) 100%
-    );
-  }
-
-  .mobile-text-enhanced {
-    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9), 0 2px 6px rgba(0, 0, 0, 0.8);
-    letter-spacing: 0.02em;
-  }
-
-  /* Apply mobile text enhancement only on small screens */
-  @media (max-width: 768px) {
-    .mobile-text-enhanced {
-      text-shadow: 0 4px 16px rgba(0, 0, 0, 0.95), 0 2px 8px rgba(0, 0, 0, 0.9);
-      letter-spacing: 0.03em;
+        0 2px 4px rgba(255, 165, 0, 0.3),
+        0 0 8px rgba(255, 95, 31, 0.4);
     }
   }
 
@@ -246,7 +215,7 @@ All colors MUST be HSL.
   }
 
   .feature-card {
-    @apply relative p-6 rounded-xl text-center transition-all duration-300 hover:scale-105 cursor-pointer;
+    @apply relative p-4 rounded-xl text-center transition-all duration-300 hover:scale-105 cursor-pointer;
     background: linear-gradient(135deg, hsl(var(--card-dark)), hsl(var(--orange-primary) / 0.1));
     border: 1px solid hsl(var(--orange-primary) / 0.3);
     box-shadow: 0 4px 15px hsl(var(--orange-primary) / 0.2);

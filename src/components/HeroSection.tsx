@@ -43,11 +43,9 @@ const HeroSection = ({
     aviator: "https://storage.googleapis.com/ag-crm/2025-CRM-AG/Imgs/lp_aviator_desktop.png"
   };
 
-  // Use responsive images if provided, otherwise fall back to single image or default
   const finalDesktopImage = desktopImage || backgroundImage || defaultImages[gameType];
   const finalMobileImage = mobileImage || backgroundImage || defaultMobileImages[gameType];
 
-  // Determinar o texto da slot baseado no gameType
   const slotText = gameType === 'aviator' ? 'NO SLOT' : 'NA SLOT';
   
   return (
@@ -65,16 +63,16 @@ const HeroSection = ({
         </div>
         
         {/* Content Desktop */}
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 py-8 sm:py-12">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center min-h-[85vh]">
             {/* Left Content */}
-            <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-none gradient-neon-text font-dharma-exbold">
+            <div className="space-y-4 sm:space-y-6 text-center lg:text-left">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-none gradient-orange-text font-dharma-exbold">
                 APOSTOU,<br />
                 GANHOU!
               </h1>
               
-              <div className="space-y-3 sm:space-y-4">
+              <div className="space-y-2 sm:space-y-3">
                 <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white px-2 sm:px-0 font-dharma-exbold">
                   {actionText} <span className="text-orange-500">{amount}</span> E{' '}
                   <span className="text-orange-500">GANHE {spins} {rodadasText}</span>{' '}
@@ -86,7 +84,7 @@ const HeroSection = ({
                 </p>
               </div>
               
-              <div className="space-y-3 sm:space-y-4">
+              <div className="space-y-2 sm:space-y-3">
                 <a 
                   href={href}
                   target="_blank"
@@ -123,38 +121,37 @@ const HeroSection = ({
       {/* Mobile Layout */}
       <div className="block md:hidden min-h-screen flex flex-col">
         {/* Background Image Mobile - Top Section */}
-        <div className="relative flex-1 min-h-[60vh]">
+        <div className="relative flex-1 min-h-[65vh]">
           <img 
             src={finalMobileImage}
             alt={`${gameName} Background Mobile`}
             className="w-full h-full object-cover object-center"
             loading="eager"
           />
-          {/* Mobile Overlay */}
-          <div className="absolute inset-0 mobile-hero-overlay"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/95"></div>
         </div>
         
         {/* Content Mobile - Bottom Section */}
-        <div className="relative z-10 bg-black/95 px-4 py-8 min-h-[40vh] flex flex-col justify-center">
-          <div className="space-y-6 text-center">
-            <h1 className="text-4xl sm:text-5xl font-black leading-none gradient-neon-text font-dharma-exbold">
+        <div className="relative z-10 bg-black/95 px-4 py-6 min-h-[35vh] flex flex-col justify-center">
+          <div className="space-y-4 text-center">
+            <h1 className="text-4xl sm:text-5xl font-black leading-none gradient-orange-text font-dharma-exbold">
               APOSTOU,<br />
               GANHOU!
             </h1>
             
-            <div className="space-y-3">
-              <p className="text-lg font-bold text-white mobile-text-enhanced font-dharma-exbold">
+            <div className="space-y-2">
+              <p className="text-lg font-bold text-white font-dharma-exbold">
                 {actionText} <span className="text-orange-500">{amount}</span> E{' '}
                 <span className="text-orange-500">GANHE {spins} {rodadasText}</span>{' '}
                 {slotText} {gameName.toUpperCase()}!
               </p>
               
-              <p className="text-base font-bold text-white mobile-text-enhanced font-dharma-exbold">
+              <p className="text-base font-bold text-white font-dharma-exbold">
                 É SIMPLES: JOGOU, GANHOU.
               </p>
             </div>
             
-            <div className="space-y-3">
+            <div className="space-y-2">
               <a 
                 href={href}
                 target="_blank"
@@ -167,7 +164,7 @@ const HeroSection = ({
                 </Button>
               </a>
               
-              <p className="text-xs text-gray-400 mobile-text-enhanced">
+              <p className="text-xs text-gray-400">
                 * <a 
                     href="https://ajuda.apostaganha.bet.br/hc/pt-br" 
                     target="_blank"
