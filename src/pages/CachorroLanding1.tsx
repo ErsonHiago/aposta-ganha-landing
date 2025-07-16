@@ -5,7 +5,7 @@ import HeroSection from '@/components/HeroSection';
 import AdvantagesSection from '@/components/AdvantagesSection';
 import FeaturesGrid from '@/components/FeaturesGrid';
 import CTASection from '@/components/CTASection';
-import Footer from '@/components/Footer';
+import NewFooter from '@/components/NewFooter';
 import OrangeDivider from '@/components/OrangeDivider';
 
 const CachorroLanding1 = () => {
@@ -35,7 +35,7 @@ const CachorroLanding1 = () => {
         ariaLabel="Resgatar 50 rodadas no Cachorro Sortudo"
         href={cachorroHref}
       />
-      <Footer />
+      <NewFooter />
     </div>
   );
 };

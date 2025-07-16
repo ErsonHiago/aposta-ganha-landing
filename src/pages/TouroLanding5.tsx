@@ -5,7 +5,7 @@ import HeroSection from '@/components/HeroSection';
 import AdvantagesSection from '@/components/AdvantagesSection';
 import FeaturesGrid from '@/components/FeaturesGrid';
 import CTASection from '@/components/CTASection';
-import Footer from '@/components/Footer';
+import NewFooter from '@/components/NewFooter';
 import OrangeDivider from '@/components/OrangeDivider';
 
 const TouroLanding5 = () => {
@@ -35,7 +35,7 @@ const TouroLanding5 = () => {
         ariaLabel="Resgatar 100 rodadas extras no Touro Sortudo"
         href={touroHref}
       />
-      <Footer />
+      <NewFooter />
     </div>
   );
 };

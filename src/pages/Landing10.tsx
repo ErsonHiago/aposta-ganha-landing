@@ -5,7 +5,7 @@ import HeroSection from '@/components/HeroSection';
 import AdvantagesSection from '@/components/AdvantagesSection';
 import FeaturesGrid from '@/components/FeaturesGrid';
 import CTASection from '@/components/CTASection';
-import Footer from '@/components/Footer';
+import NewFooter from '@/components/NewFooter';
 import OrangeDivider from '@/components/OrangeDivider';
 
 const Landing10 = () => {
@@ -29,7 +29,7 @@ const Landing10 = () => {
       <CTASection 
         ariaLabel="Resgatar 125 giros grátis na slot Fênix Sortuda"
       />
-      <Footer />
+      <NewFooter />
     </div>
   );
 };

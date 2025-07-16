@@ -5,7 +5,7 @@ import HeroSection from '@/components/HeroSection';
 import AdvantagesSection from '@/components/AdvantagesSection';
 import FeaturesGrid from '@/components/FeaturesGrid';
 import CTASection from '@/components/CTASection';
-import Footer from '@/components/Footer';
+import NewFooter from '@/components/NewFooter';
 import OrangeDivider from '@/components/OrangeDivider';
 
 const AviatorLanding5 = () => {
@@ -35,7 +35,7 @@ const AviatorLanding5 = () => {
         ariaLabel="Receber 10 rodadas no Aviator"
         href={aviatorHref}
       />
-      <Footer />
+      <NewFooter />
     </div>
   );
 };
