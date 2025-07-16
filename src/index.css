@@ -9,6 +9,15 @@
 All colors MUST be HSL.
 */
 
+@font-face {
+  font-family: 'DharmaGothicE-ExBold';
+  src: url('https://storage.googleapis.com/ag-crm/2025-CRM-AG/Fonts/DharmaGothicE-ExBold.woff2') format('woff2'),
+       url('https://storage.googleapis.com/ag-crm/2025-CRM-AG/Fonts/DharmaGothicE-ExBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -54,6 +63,7 @@ All colors MUST be HSL.
     --orange-primary: 25 100% 55%;
     --orange-secondary: 20 100% 60%;
     --orange-vibrant: 22 100% 65%;
+    --orange-neon: 16 100% 56%; /* #FF5F1F converted to HSL */
     --red-primary: 0 85% 60%;
     --red-secondary: 350 85% 65%;
     --dark-bg: 0 0% 8%;
@@ -119,41 +129,40 @@ All colors MUST be HSL.
     text-shadow: 0 0 10px hsl(var(--orange-primary) / 0.8);
   }
 
-  /* Enhanced Gradient Radiant Text Effect for "APOSTOU, GANHOU!" */
-  .gradient-radiant-text {
-    font-family: 'DharmaGothicE', 'Impact', 'Arial Black', sans-serif;
+  /* Enhanced Gradient Neon Text Effect for "APOSTOU, GANHOU!" */
+  .gradient-neon-text {
     background: linear-gradient(45deg, 
-      hsl(var(--orange-vibrant)), 
-      hsl(var(--orange-primary)), 
-      hsl(var(--orange-secondary)),
-      hsl(var(--orange-vibrant))
+      hsl(var(--orange-neon)), 
+      hsl(var(--orange-neon) / 0.9), 
+      hsl(var(--orange-neon)),
+      hsl(var(--orange-neon) / 0.8)
     );
     background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: neon-sweep 3s ease-in-out infinite;
-    filter: brightness(1.2) contrast(1.1) saturate(1.3);
+    filter: brightness(1.3) contrast(1.2) saturate(1.4);
     text-shadow: 
-      0 0 3px hsl(var(--orange-primary) / 0.9),
-      0 0 6px hsl(var(--orange-primary) / 0.7),
-      0 0 9px hsl(var(--orange-primary) / 0.5),
-      0 0 12px hsl(var(--orange-primary) / 0.3),
-      0 0 15px hsl(var(--orange-primary) / 0.2);
+      0 0 5px hsl(var(--orange-neon) / 0.9),
+      0 0 10px hsl(var(--orange-neon) / 0.7),
+      0 0 15px hsl(var(--orange-neon) / 0.5),
+      0 0 20px hsl(var(--orange-neon) / 0.3),
+      0 0 25px hsl(var(--orange-neon) / 0.2);
   }
 
   /* Fallback for browsers that don't support background-clip: text */
   @supports not (background-clip: text) {
-    .gradient-radiant-text {
-      color: hsl(var(--orange-vibrant));
+    .gradient-neon-text {
+      color: hsl(var(--orange-neon));
       background: none;
-      filter: brightness(1.2) contrast(1.1) saturate(1.3);
+      filter: brightness(1.3) contrast(1.2) saturate(1.4);
       text-shadow: 
-        0 0 3px hsl(var(--orange-primary) / 0.9),
-        0 0 6px hsl(var(--orange-primary) / 0.7),
-        0 0 9px hsl(var(--orange-primary) / 0.5),
-        0 0 12px hsl(var(--orange-primary) / 0.3),
-        0 0 15px hsl(var(--orange-primary) / 0.2);
+        0 0 5px hsl(var(--orange-neon) / 0.9),
+        0 0 10px hsl(var(--orange-neon) / 0.7),
+        0 0 15px hsl(var(--orange-neon) / 0.5),
+        0 0 20px hsl(var(--orange-neon) / 0.3),
+        0 0 25px hsl(var(--orange-neon) / 0.2);
     }
   }
 
@@ -254,6 +263,12 @@ All colors MUST be HSL.
       hsl(var(--orange-primary) / 0.8) 70%, 
       transparent 100%
     );
+  }
+
+  /* DharmaGothicE-ExBold font classes */
+  .font-dharma-exbold {
+    font-family: 'DharmaGothicE-ExBold', 'DharmaGothicE', 'Impact', 'Arial Black', sans-serif;
+    font-weight: 800;
   }
 
   /* Dharma Gothic font classes */

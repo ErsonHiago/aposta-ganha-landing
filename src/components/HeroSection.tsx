@@ -36,9 +36,16 @@ const HeroSection = ({
     aviator: "https://storage.googleapis.com/ag-crm/2025-CRM-AG/Imgs/lp_aviator_desktop.png"
   };
 
+  const defaultMobileImages = {
+    fenix: "https://storage.googleapis.com/ag-crm/2025-CRM-AG/Imgs/lp_fenix_mobile.png",
+    touro: "/lovable-uploads/4480be22-79c5-4acd-b0ec-ef8d05ca085d.png",
+    cachorro: "https://storage.googleapis.com/ag-crm/2025-CRM-AG/Imgs/lp_cachorro_desktop.png",
+    aviator: "https://storage.googleapis.com/ag-crm/2025-CRM-AG/Imgs/lp_aviator_desktop.png"
+  };
+
   // Use responsive images if provided, otherwise fall back to single image or default
   const finalDesktopImage = desktopImage || backgroundImage || defaultImages[gameType];
-  const finalMobileImage = mobileImage || backgroundImage || defaultImages[gameType];
+  const finalMobileImage = mobileImage || backgroundImage || defaultMobileImages[gameType];
 
   // Determinar o texto da slot baseado no gameType
   const slotText = gameType === 'aviator' ? 'NO SLOT' : 'NA SLOT';
@@ -73,19 +80,19 @@ const HeroSection = ({
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
           {/* Left Content */}
           <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-none mobile-text-enhanced gradient-radiant-text">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-none mobile-text-enhanced gradient-neon-text font-dharma-exbold">
               APOSTOU,<br />
               GANHOU!
             </h1>
             
             <div className="space-y-3 sm:space-y-4">
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white px-2 sm:px-0 mobile-text-enhanced">
+              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white px-2 sm:px-0 mobile-text-enhanced font-dharma-exbold">
                 {actionText} <span className="text-orange-500">{amount}</span> E{' '}
                 <span className="text-orange-500">GANHE {spins} {rodadasText}</span>{' '}
                 {slotText} {gameName.toUpperCase()}!
               </p>
               
-              <p className="text-base sm:text-lg lg:text-xl font-bold text-white mobile-text-enhanced">
+              <p className="text-base sm:text-lg lg:text-xl font-bold text-white mobile-text-enhanced font-dharma-exbold">
                 É SIMPLES: JOGOU, GANHOU.
               </p>
             </div>

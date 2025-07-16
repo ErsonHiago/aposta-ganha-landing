@@ -21,6 +21,7 @@ export default {
     extend: {
       fontFamily: {
         'dharma': ['DharmaGothicE', 'Impact', 'Arial Black', 'sans-serif'],
+        'dharma-exbold': ['DharmaGothicE-ExBold', 'DharmaGothicE', 'Impact', 'Arial Black', 'sans-serif'],
         'exo': ['Exo', 'Arial', 'sans-serif'],
         'roboto': ['Roboto', 'Arial', 'sans-serif'],
       },
