@@ -6,6 +6,7 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 const LANDING_PAGES = [
+  { name: 'fenix-1-real', folder: 'fenix', description: 'Landing page para promoção Fênix Sortuda - R$ 1,00 = 50 giros grátis' },
   { name: 'fenix-5-rodadas', folder: 'fenix', description: 'Landing page para promoção Fênix Sortuda - R$ 5,00 = 100 giros grátis' },
   { name: 'fenix-10-rodadas', folder: 'fenix', description: 'Landing page para promoção Fênix Sortuda - R$ 10,00 = 125 giros grátis' },
   { name: 'touro-1-real', folder: 'touro', description: 'Landing page para promoção Touro Sortudo - R$ 1,00 = 50 rodadas' },

@@ -6,6 +6,7 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 const LANDING_PAGES = [
+  'fenix/fenix-1-real',
   'fenix/fenix-5-rodadas',
   'fenix/fenix-10-rodadas',
   'touro/touro-1-real',
@@ -118,6 +119,7 @@ createRoot(document.getElementById("root")!).render(<App />);`;
   
   // Mapear páginas para componentes
   const pageMapping = {
+    'fenix/fenix-1-real': 'FenixLanding1',
     'fenix/fenix-5-rodadas': 'Landing5',
     'fenix/fenix-10-rodadas': 'Landing10',
     'touro/touro-1-real': 'TouroLanding1',
@@ -141,6 +143,7 @@ createRoot(document.getElementById("root")!).render(<App />);`;
 
 const getComponentName = (landingPagePath) => {
   const mapping = {
+    'fenix/fenix-1-real': 'FenixLanding1',
     'fenix/fenix-5-rodadas': 'Landing5',
     'fenix/fenix-10-rodadas': 'Landing10',
     'touro/touro-1-real': 'TouroLanding1',
